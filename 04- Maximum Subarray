@@ -1,0 +1,33 @@
+package com.learnjava.Practicejava;
+
+	public class Learnjava {
+
+		public static void main(String[] args) {
+
+		    int nums[]= {5,4,-1,7,8};
+		    System.out.println(maxSubarray(nums));
+		}
+		
+		
+		//T:O(N), S:O(1)
+		 public static int maxSubarray(int[] nums) {
+			 
+			 int sum=0, maxsub=nums[0];
+			 
+			 for (int i = 0; i < nums.length; i++) {
+//				sum=sum+nums[i];
+//				if(sum>maxsub) {
+//					maxsub=sum;
+//				}
+//				if(sum<0) {
+//					sum=0;
+//				}       
+				 // we can use above logic also with same time and space complexity
+				 
+				 sum=Math.max(nums[i], nums[i]+sum);
+				 maxsub=Math.max(maxsub, sum);
+			}
+			 return maxsub;
+		        
+		  }
+}
